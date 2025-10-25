@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Knowledge Quiz</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ===== WELCOME SCREEN ===== -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-icon">🧠</div>
+            <h1 class="welcome-title">
+                <span class="typing-text">Welcome to Computer Knowledge Quiz!</span>
+            </h1>
+            <p class="welcome-subtitle">Test your computer knowledge with 10 exciting questions. You have 15 minutes to complete the quiz!</p>
+            <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <!-- ===== QUIZ SCREEN ===== -->
+        <div class="quiz-screen hidden" id="quizScreen">
+            <!-- Header with Timer and Progress -->
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <div class="timer" id="timer">15:00</div>
+                    <div class="question-counter">
+                        <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-label">Progress</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card">
+                <div class="question-text" id="questionText"></div>
+                <div class="options-container" id="optionsContainer"></div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="quiz-navigation">
+                <button class="btn btn-secondary btn-nav" id="prevBtn" onclick="previousQuestion()" disabled>← Previous</button>
+                <button class="btn btn-primary btn-nav" id="nextBtn" onclick="nextQuestion()">Next →</button>
+                <button class="btn btn-success btn-nav" id="submitBtn" onclick="submitQuiz()" style="display: none;">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- ===== RESULT SCREEN ===== -->
+        <div class="result-screen hidden" id="resultScreen">
+            <div class="result-icon" id="resultIcon">🎉</div>
+            <h2 class="result-title" id="resultTitle">Congratulations!</h2>
+            <p class="result-message" id="resultMessage"></p>
+            <div class="score-display">
+                <div class="score-number" id="scoreNumber">8/10</div>
+                <div class="score-label">Correct Answers</div>
+            </div>
+            <div class="result-buttons">
+                <button class="btn btn-primary" onclick="retryQuiz()">Retry Quiz</button>
+                <button class="btn btn-secondary" onclick="closeQuiz()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
